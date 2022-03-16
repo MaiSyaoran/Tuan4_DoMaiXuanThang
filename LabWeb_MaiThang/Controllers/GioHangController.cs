@@ -31,6 +31,11 @@ namespace LabWeb_MaiThang.Controllers
                 lstGiohang.Add(sanpham);
                 return Redirect(strURL);
             }
+            else
+            {
+                sanpham.iSoluong++;
+                return Redirect(strURL);
+            }
         }
         private int TongSoLuong()
         {
@@ -100,7 +105,7 @@ namespace LabWeb_MaiThang.Controllers
         }
         public ActionResult XoaTatCaGioHang()
         {
-            LinkedList<Giohang> lstGiohang = Laygiohang();
+            List<Giohang> lstGiohang = Laygiohang();
             lstGiohang.Clear();
             return RedirectToAction("GioHang");
         }
